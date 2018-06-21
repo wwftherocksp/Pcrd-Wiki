@@ -69,11 +69,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'pcrd_unpack:unit_summary' %}">{% trans "Summary" %}</a>
                 </li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'pcrd_unpack:solution_index' %}">{% trans "Solutions" %}</a>
-                    </li>
-                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pcrd_unpack:solution_index' %}">{% trans "Solutions" %}</a>
+                </li>
 
     {#            <li class="nav-item">#}
     {#                <a class="nav-link" href="{% url 'pcrd_unpack:item_list' %}">Items</a>#}
