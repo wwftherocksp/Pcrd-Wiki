@@ -33,9 +33,13 @@ class SolutionView(TemplateView):
             **team_base_context(),
             **{
                 "left_team":solution.left_team.team_list,
+                "left_team_orig":solution.left_team.team_list,
                 "left_rarity": solution.left_team.rarity_list,
+                "left_rarity_orig": solution.left_team.rarity_list,
                 "right_team":solution.right_team.team_list,
+                "right_team_orig":solution.right_team.team_list,
                 "right_rarity": solution.right_team.rarity_list,
+                "right_rarity_orig": solution.right_team.rarity_list,
                 "share_link": kwargs["uri"],
                 "solution": solution,
             },
@@ -51,8 +55,10 @@ class CreateSolutionView(TemplateView):
             **team_base_context(),
             **{
                 "left_team":[""]*models.Team.UNITS_NUM,
+                "left_team_orig":[""]*models.Team.UNITS_NUM,
                 "left_rarity": [models.UnitSummary.max_rarity()]*models.Team.UNITS_NUM,
                 "right_team":[""]*models.Team.UNITS_NUM,
+                "right_team_orig":[""]*models.Team.UNITS_NUM,
                 "right_rarity": [models.UnitSummary.max_rarity()]*models.Team.UNITS_NUM,
             },
         }
@@ -89,7 +95,7 @@ class SolutionSearchView(TemplateView):
             team_dict = {"right_team__unit_{}".format(i+1): u for i, u in enumerate(team) if u != ""}
 
             if team_dict:
-                s_to_show = models.Solution.objects.filter(**team_dict).order_by("-up_vote", "down_vote")[:5]
+                s_to_show = models.Solution.objects.filter(**team_dict).order_by("-up_vote", "down_vote")
         context = {
             **team_base_context(),
             **{
