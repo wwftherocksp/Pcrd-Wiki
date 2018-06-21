@@ -2,7 +2,7 @@
 
 function share_btn_bind() {
     $("#share_btn").click(function (e) {
-        if (!(check_list_valid(left_team) && check_list_valid(left_team) && check_list_valid(left_team) && check_list_valid(left_team))) {
+        if (!(check_list_valid(left_team) && check_list_valid(right_team))){
             alert("units should be selected correctly");
         }
         $(this).attr('aria-disabled', true);

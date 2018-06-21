@@ -24,11 +24,11 @@
 
     <div class="container my-3">
 
-        {% include "pcrd_unpack/solution/team_deck.html" with team="left" team_num=left_team rarities=left_rarity %}
+        {% include "pcrd_unpack/solution/team_deck.html" with team="left" team_num=left_team_orig rarities=left_rarity_orig %}
         <div class="row justify-content-center m-3">
             <h2>VS</h2>
         </div>
-        {% include "pcrd_unpack/solution/team_deck.html" with team="right" team_num=right_team rarities=right_rarity%}
+        {% include "pcrd_unpack/solution/team_deck.html" with team="right" team_num=right_team_orig rarities=right_rarity_orig %}
 
     </div>
     <div class="row justify-content-center ">
@@ -52,7 +52,7 @@
         {% autoescape off %}
             var left_team = {{ left_team }};
             var left_rarity = {{ left_rarity }};
-            var right_team = {{ left_team }};
+            var right_team = {{ right_team }};
             var right_rarity = {{ right_rarity }};
             var unit_icon_path = "{{ unit_icon }}";
         {% endautoescape %}
