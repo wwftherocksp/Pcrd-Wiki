@@ -46,3 +46,18 @@ img.card-img-top{
         font-size: 10px;
     }
 }
+
+@media (min-width: 577px) {
+
+    .dropdown-menu {
+        max-height: 450px;
+    }
+
+    .card-group {
+        overflow-x: initial;
+    }
+
+    .card-body .dropdown-item.btn {
+        padding: .25rem .5rem;
+    }
+}
