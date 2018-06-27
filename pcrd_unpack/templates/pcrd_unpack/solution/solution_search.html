@@ -32,6 +32,9 @@
             var unit_icon_path = "{{ unit_icon }}";
         {% endautoescape %}
         var search_url = "{% url "pcrd_unpack:search_solution" %}";
+        function go_to_solution(e) {
+            window.location.href = $(e).attr("content");
+        }
     </script>
 
     <script type="text/javascript" src="{% static "pcrd_unpack/scripts/elements/SearchSolution.js" %}"></script>
