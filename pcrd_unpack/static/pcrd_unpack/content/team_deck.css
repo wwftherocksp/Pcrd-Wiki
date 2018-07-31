@@ -58,6 +58,12 @@ img.card-img-top{
     }
 
     .card-body .dropdown-item.btn {
-        padding: .25rem .5rem;
+        padding: .2rem .5rem;
+    }
+
+    .card-body .dropdown-item.btn .img-thumbnail {
+        width: 34% !important;
+        height: 34% !important;
+        padding: .15rem;
     }
 }
