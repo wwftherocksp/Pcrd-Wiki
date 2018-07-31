@@ -13,7 +13,7 @@ import base64
 
 def team_base_context():
     context = {
-        'units': models.UnitData.available_unit().order_by('search_area_width'),
+        'units': models.UnitData.available_unit().exclude(comment__lt=200000).order_by('search_area_width'),
         "rarity_set": range(models.UnitSummary.max_rarity(), 0, -1),
     }
     return context
